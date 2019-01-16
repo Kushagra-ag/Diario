@@ -58,7 +58,7 @@ class CreateNew extends Component {
         this.onChangeContent = this.onChangeContent.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onSave = this.onSave.bind(this);
-
+        this.delete = this.delete.bind(this);
     }
 
     onChangeTitle(e) {
@@ -82,19 +82,22 @@ class CreateNew extends Component {
                 title = "untitled";
             this.props.data.addNote(title, content);
             console.log("Data saved");
-            console.log(my_store.getState())
+            console.log(my_store.getState());
         }
 
     }
 
     delete() {
+        console.log(my_store.getState());
         this.props.data.delNote(this.state.id);
+        console.log(my_store.getState());
     }
 
     render() {
         return (
             <div className="createNew initial">
-                <input type="text" id="title" size="1" placeholder="Title" autoFocus autoComplete="off" autoCapitalize="words" onChange={this.onChangeTitle} value={this.state.title}></input>
+                <Link to='../notes' ><img  src={rubbish} onClick={this.delete} alt="delete" style={{float:"right",zIndex:1,opacity:0.99}}/></Link>
+                <input style={{marginTop:"-10px"}} type="text" id="title" size="1" placeholder="Title" autoFocus autoComplete="off" autoCapitalize="words" onChange={this.onChangeTitle} value={this.state.title}></input>
                 <textarea placeholder="Content" autoComplete="off" autoCapitalize="sentences" onChange={this.onChangeContent} value={this.state.content}></textarea>
                 <Link to='../notes'><button onClick={this.onSave}>Save</button></Link>
             </div>

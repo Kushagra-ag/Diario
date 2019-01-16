@@ -82,7 +82,7 @@ const mapDispatchToProps = (dispatch) => {
     method_2: () => { dispatch({ type: "DEC" }) },
     input_click: (p) => { dispatch({ type: "INSERT", payload: p }) },
     note : (title,content) => {dispatch({type:"NOTES_ADD", title: title, content: content})},
-    delNote : (id) => {dispatch({type:"DEL_NOTE", delId: id})}
+    delNote : (id) => {dispatch({type:"DEL_NOTE", delId: id}); console.log(id)}
   };
 }
 
