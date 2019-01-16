@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, Link } from 'react-router-dom';
 import plus from '../images/notes/images.png';
 import { my_store } from '../store';
+import rubbish from '../images/notes/delNote.png';
 
 class Notes extends Component {
 
@@ -11,16 +12,18 @@ class Notes extends Component {
 
         this.state = {
             title: "",
-            content: ""
+            content: "",
+            id: ""
         }
         this.ref1 = React.createRef();
         this.callback = this.callback.bind(this);
     }
 
-    callback(p1, p2) {
+    callback(p1, p2, p3) {
         this.setState({
             title: p1,
-            content: p2
+            content: p2,
+            id: p3
         })
     }
 
@@ -30,7 +33,7 @@ class Notes extends Component {
 
                 <Switch>
                     <Route exact path='/notes' render={props => (<Grid {...props} data={this.props.dataNotes.state} local={{ callback: this.callback }} />)} />
-                    <Route exact path='/notes/new' render={props => (<CreateNew {...props} data={this.props.dataNotes.addNote} local={{ title: this.state.title, content: this.state.content }} />)} />
+                    <Route exact path='/notes/new' render={props => (<CreateNew {...props} data={this.props.dataNotes} local={{ title: this.state.title, content: this.state.content, id: this.state.id }} />)} />
 
                 </Switch>
 
@@ -49,7 +52,8 @@ class CreateNew extends Component {
 
         this.state = {
             title: this.props.local.title,
-            content: this.props.local.content
+            content: this.props.local.content,
+            id: this.props.local.id
         };
         this.onChangeContent = this.onChangeContent.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -76,11 +80,15 @@ class CreateNew extends Component {
         if (title || content) {
             if (!title)
                 title = "untitled";
-            this.props.data(title, content);
+            this.props.data.addNote(title, content);
             console.log("Data saved");
             console.log(my_store.getState())
         }
 
+    }
+
+    delete() {
+        this.props.data.delNote(this.state.id);
     }
 
     render() {
@@ -114,7 +122,7 @@ class Grid extends Component {
         this.props.data.notes.map((val) => {
             let id = e.target.id;
             if (val.id == id) {
-                this.props.local.callback(val.title, val.content);
+                this.props.local.callback(val.title, val.content, val.id);
             }
             return 0
 

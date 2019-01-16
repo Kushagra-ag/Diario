@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import '../App.css';
 //import { createStore} from 'redux';
 import { connect } from 'react-redux';
@@ -38,6 +37,7 @@ class App extends Component {
     };
 
     const notesProps = {
+      delNote: this.props.delNote,
       addNote: this.props.note,
       state: this.props.message
     };
@@ -81,7 +81,8 @@ const mapDispatchToProps = (dispatch) => {
     method_1: () => { dispatch({ type: "INC" }) },
     method_2: () => { dispatch({ type: "DEC" }) },
     input_click: (p) => { dispatch({ type: "INSERT", payload: p }) },
-    note : (title,content) => {dispatch({type:"NOTES_ADD", title: title, content: content})}
+    note : (title,content) => {dispatch({type:"NOTES_ADD", title: title, content: content})},
+    delNote : (id) => {dispatch({type:"DEL_NOTE", delId: id})}
   };
 }
 

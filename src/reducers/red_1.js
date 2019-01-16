@@ -1,24 +1,24 @@
 
-export default function red_1(state = {count:0, arr:[], notes:[], noteId:1}, action) {
+export default function red_1(state = {count:0, arr:[], notes:[], noteId:1, delId: 0}, action) {
 
     switch(action.type)
     {
-      case 'INC': state = {
+      case 'INC': return state = {
         ...state,
         count: state.count + 1
-      }; break;
+      }; 
   
-      case 'DEC': state = {
+      case 'DEC': return state = {
         ...state,
         count: state.count - 1
-      }; break;
+      };  
   
-      case 'INSERT': state = {
+      case 'INSERT': return state = {
         ...state, 
         arr: state.arr.concat(action.payload)
-      }; break;
+      };  
 
-      case 'NOTES_ADD': state = {
+      case 'NOTES_ADD': return state = {
         ...state, 
         notes: state.notes.concat({
           title: action.title,
@@ -26,11 +26,15 @@ export default function red_1(state = {count:0, arr:[], notes:[], noteId:1}, act
           id: state.noteId
         }),
         noteId: state.noteId+1
-      }; break;
+      };
+
+      case 'DEL_NOTE': return state = {
+        ...state,
+        notes: state.notes.filter(id => id != action.delId)
+      };
   
       default: return state;
     }
-  
-    return state;
+
   }
   

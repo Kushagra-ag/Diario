@@ -6,7 +6,7 @@ var urlsToCache = [
   '/script/webpack-bundle.js'
 ];
 
-self.addEventListener('install', function(event) {
+window.addEventListener('install', function(event) {
   console.log("Installing...");
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -18,11 +18,11 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('activate', function(event){
+window.addEventListener('activate', function(event){
   console.log("Cache version ready to handle requests -",CACHE_NAME);
 });
 
-self.addEventListener('fetch', function(event) {
+window.addEventListener('fetch', function(event) {
     console.log(event.request.url);
     event.respondWith(
         caches.match(event.request).then(function(response) {
