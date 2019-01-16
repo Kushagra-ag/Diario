@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = (props) => {
     return(
                 <nav id="sidebar">
-                    <div className="sidebar-header" style={style1}>
+                    <div className="sidebar-header">
                         <br/>
                         <h3>Sidemenu</h3>
                         <p>Dummy Heading</p><br/>

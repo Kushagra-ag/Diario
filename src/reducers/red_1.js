@@ -1,5 +1,3 @@
-  
-import {my_store} from '../store.js';
 export default function red_1(state = {count:0, arr:[], notes:[], noteId:1, delId: 0}, action) {
 
     switch(action.type)
@@ -29,8 +27,7 @@ export default function red_1(state = {count:0, arr:[], notes:[], noteId:1, delI
         noteId: state.noteId+1
       };
 
-      case 'DEL_NOTE': console.log(action.delId);
-      return state = {
+      case 'DEL_NOTE': return state = {
         ...state,
         delId: action.delId,  
         notes: state.notes.filter(val => val.id != action.delId)

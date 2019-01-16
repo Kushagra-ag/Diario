@@ -1,6 +1,7 @@
+import part1 from './images/backgrounds/sidemenu/part1.png';
 
 export const style1 = {
-    backgroundColor: 'rgba(0,136,136,0.8)',
+    background: 'rgba(62,39,35,0.8)',
     color: 'white'
 };
 

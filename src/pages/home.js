@@ -17,7 +17,7 @@ class Home extends Component {
 
         return(
             <div>
-                <Welcome />
+                
                 <h1>Welcome</h1><br/>
                 <h4>This is the Homepage</h4><br/>
                 <button onClick = {this.props.dataHome.method_1}>Increment</button>
