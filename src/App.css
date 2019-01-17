@@ -10,6 +10,19 @@
   width: 100%;
 }
 
+.wrapper:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: #a1887f url('./images/backgrounds/content-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
 .container-fluid {
   padding-bottom: 50%;
 }
@@ -45,17 +58,8 @@
   overflow: hidden;
 }
 
-.wrapper:before {
-  content: "";
-  display: block;
+.content:before {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  background: #a1887f url('./images/backgrounds/content-bg.jpg') no-repeat center center;
-  background-size: cover;
 }
 
 .sidemenu {
@@ -146,7 +150,7 @@
   animation: li 1s 0.75s 1 forwards;
 }
 .class6 {
-  animation: li 1s 1s 1 forwards;
+  animation: li 1s 0.95s 1 forwards;
 }
 @keyframes li {
   from {opacity: 0;margin-top:-20px}
@@ -260,7 +264,8 @@
   font-size: 4em;
   min-width: 90vw;
   padding: 1px 15px;
-  color: brown;
+  color: #a1887f;
+  background: transparent;
 }
 
 .notes input:focus, textarea:focus {
@@ -269,7 +274,7 @@
 
 .notes input::placeholder {
   color: brown;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .notes textarea {
@@ -277,7 +282,8 @@
   font-size: 1.5em;
   min-height: 60vh;
   min-width: 70vw;
-  color: #585757;
+  color: #fff;
+  background: transparent;
 }
 
 .notes button {
