@@ -5,9 +5,13 @@ $(document).ready(function () {
     let count = 1;
     if (window.innerWidth >= 850) {
         $('#sidebar li').css("visibility", "visible");
+        $('.sidebar-header').css("visibility", "visible");
         $('#sidebarCollapse').on('click', function () {
             $('.content').toggleClass('sidemenu');
         });
+
+        $('#sidebar li').css("backgroundImage", "none");
+        $('.sidebar-header').css("backgroundImage", "none");
     }
 
     else {
