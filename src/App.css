@@ -34,7 +34,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: #a1887f url('./images/backgrounds/content-bg.jpg') no-repeat fixed;
+  background: #a1887f url('./images/backgrounds/content-bg.jpg') 0 0 no-repeat fixed;
   background-size: cover;
   color: #fff;
   transition: all 0.5s ease 0.2s;
