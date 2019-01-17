@@ -17,11 +17,13 @@ $(document).ready(function () {
             $('.content').toggleClass('sidemenu');
 
             if (count) {
+                $('.sidebar-header').toggleClass('class0');
                 $('#sidebar > ul > li:nth-child(1)').toggleClass('class1');
                 $('#sidebar > ul > li:nth-child(2)').toggleClass('class2');
                 $('#sidebar > ul > li:nth-child(3)').toggleClass('class3');
                 $('#sidebar > ul > li:nth-child(4)').toggleClass('class4');
                 $('#sidebar > ul > li:nth-child(5)').toggleClass('class5');
+                $('#sidebar > ul > li:nth-child(6)').toggleClass('class6');
                 count--;
 
             }
@@ -31,11 +33,13 @@ $(document).ready(function () {
         $('#sidebarCollapse').on('click', function () {
             $('.content').toggleClass('sidemenu maxheight');
             if (count) {
+                $('.sidebar-header').toggleClass('class0');
                 $('#sidebar > ul > li:nth-child(1)').toggleClass('class1');
                 $('#sidebar > ul > li:nth-child(2)').toggleClass('class2');
                 $('#sidebar > ul > li:nth-child(3)').toggleClass('class3');
                 $('#sidebar > ul > li:nth-child(4)').toggleClass('class4');
                 $('#sidebar > ul > li:nth-child(5)').toggleClass('class5');
+                $('#sidebar > ul > li:nth-child(6)').toggleClass('class6');
                 count--;
 
             }

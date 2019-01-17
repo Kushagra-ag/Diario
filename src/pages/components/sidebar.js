@@ -40,6 +40,9 @@ const Sidebar = (props) => {
                         <li>
                             <a href="#">Contact</a>
                         </li>
+                        <li>
+                            
+                        </li>
                     </ul>
                 </nav>
     )

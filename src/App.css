@@ -28,6 +28,7 @@
   transition: all 0.3s;
   max-width: 250px;
   min-width: 250px;
+  background-color: rgba(62,39,35,0.1);
 }
 
 .content {
@@ -54,6 +55,9 @@
 
 .sidebar-header {
     background: rgba(62,39,35,0.8) url('./images/backgrounds/sidemenu/part1.png');
+    visibility: hidden;
+    transition: visibility 0.3s;
+    color: white;
 }
 
 #sidebar a {
@@ -93,7 +97,16 @@
   background: rgba(62,39,35,0.1) url('./images/backgrounds/sidemenu/part6.png');
 }
 
+#sidebar > ul > li:nth-child(6) {
+  background: url('./images/backgrounds/sidemenu/part7.png') no-repeat;
+  height: calc(100vh - 349px);
+  
+}
+
 /* animating sidebar menus (one time)*/
+.class0 {
+  animation: li 1s 0.25s 1 forwards;
+}
 .class1 {
   animation: li 1s 0.25s 1 forwards;
 }
@@ -104,10 +117,13 @@
   animation: li 1s 0.45s 1 forwards;
 }
 .class4 {
-  animation: li 1s 0.55s 1 forwards;
+  animation: li 1s 0.60s 1 forwards;
 }
 .class5 {
-  animation: li 1s 0.65s 1 forwards;
+  animation: li 1s 0.75s 1 forwards;
+}
+.class6 {
+  animation: li 1s 1s 1 forwards;
 }
 @keyframes li {
   from {opacity: 0;margin-top:-20px}
