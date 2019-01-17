@@ -38,7 +38,7 @@
   background-size: cover;
   color: #fff;
   transition: all 0.5s ease 0.2s;
-  box-shadow: 8px -8px 9px 0 rgba(0,0,0,0.5);
+  box-shadow: 8px 0 9px 0 rgba(0,0,0,0.5);
   z-index: 5;
   overflow: hidden;
 }
@@ -341,7 +341,7 @@
   .noSidemenu {
     position: relative;
     margin-left: 0;
-    background-color: rgba(0,136,136,0.1);
+    background-color: rgba(62,39,35,0.1);
   }
 
   .content {
