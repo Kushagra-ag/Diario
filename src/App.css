@@ -10,7 +10,7 @@
   width: 100%;
 }
 
-.wrapper:before {
+/*.wrapper:before {
   content: "";
   display: block;
   position: fixed;
@@ -21,7 +21,7 @@
   z-index: -10;
   background: #a1887f url('./images/backgrounds/content-bg.jpg') no-repeat center center;
   background-size: cover;
-}
+}*/
 
 .container-fluid {
   padding-bottom: 50%;
@@ -59,6 +59,7 @@
 }
 
 .content:before {
+  content: "";
   position: fixed;
 }
 
