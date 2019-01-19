@@ -15,7 +15,6 @@ class Notes extends Component {
             content: "",
             id: ""
         }
-        this.ref1 = React.createRef();
         this.callback = this.callback.bind(this);
     }
 

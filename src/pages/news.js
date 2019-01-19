@@ -13,7 +13,6 @@ class News extends Component {
         this.state = {
             query: "",
             country: "in",
-            type: "top-headlines",
             category: "business",
             articles: []
         };
@@ -49,65 +48,68 @@ class News extends Component {
     }
 
     onSubmit() {
+        const txt = <em>Fetching your news...</em>;
+        let url;
 
-        if(this.state.query !== "")
-            this.setState({
-                ...this.state,
-                type: "everything"
-            });
-        
-        let url = `${BASEURL+this.state.type}?country=${this.state.country}
-&category=${this.state.category}&pageSize=10`;
+        this.setState({
+            articles: txt
+        });
 
-        if(this.state.type==="everything")
-            url = `${BASEURL+this.state.type}?q=${this.state.query}&pageSize=10`;
+        if (this.state.query === "") {
+
+            url = `${BASEURL}top-headlines?country=${this.state.country}&category=${this.state.category}&pageSize=10`; 
+        }
+
+        else {
+            url = `${BASEURL}everything?q=${this.state.query}&pageSize=10`;
+        }
 
         console.log(url);
-        fetch(url,{
+        fetch(url, {
             withCredentials: true,
             headers: {
                 'Authorization': `Bearer ${KEY}`
             }
         })
             .then(results => results.json())
-                .then(data => {
-                    if(data.status!== "ok") {
-                        //console.log("not ok");
-                        this.setState({articles: data.message});
-                        return;
-                    }
-                    //console.log("ok");
-                    let items = data.articles.map((article,idx) => {
-                        return(
-                            <li key={idx}>
-                                <h4>{article.title}</h4>
-                                <p>Published on <strong>{this.date(article.publishedAt)}</strong></p>
-                                <p>{article.content}</p>
-                                <span>Read full article <a href={article.url}>here</a></span>
-                                <p><strong>Source</strong> - {article.author}, {article.source.name}</p>
-                                
-                            </li>
-                            );
-                        })
+            .then(data => {
+                if (data.status !== "ok") {
+                    //console.log("not ok");
+                    this.setState({ articles: data.message });
+                    return;
+                }
+                //console.log("ok");
+                let items = data.articles.map((article, idx) => {
+                    return (
+                        <li key={idx}>
+                            <h4>{article.title}</h4>
+                            <p>Published on <strong>{this.date(article.publishedAt)}</strong></p>
+                            <p>{article.content}</p>
+                            <span>Read full article <a href={article.url}>here</a></span>
+                            <p><strong>Source</strong> - {article.author}, {article.source.name}</p>
 
-                        this.setState({
-                            ...this.state,
-                            articles: items,
-                            query: ""
-                        })
-                    });
+                        </li>
+                    );
+                })
+
+                this.setState({
+                    ...this.state,
+                    articles: items,
+                    query: ""
+                })
+            });
     }
 
     render() {
-        
-        return(
+
+        return (
             <div className="news">
-                <h2>Latest news</h2><br/>
+                <h2>Latest news</h2><br />
                 <div className="row" style={style3}>
-                <div className="col-6 col-sm-4">
-                        Category 
+                    <div className="col-6 col-sm-4">
+                        Category
                     </div>
-                    <div className="col-6 col-sm-4" style={{textAlign:'left'}}>
+                    <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
                         <select onChange={this.categoryChange} defautvalue="business">
                             <option value="business">Business</option>
                             <option value="entertainment">Entertainment</option>
@@ -120,13 +122,13 @@ class News extends Component {
                     </div>
                 </div>
                 <div className="row" style={style3}>
-                <div className="col-6 col-sm-4">
+                    <div className="col-6 col-sm-4">
                         Search
                     </div>
-                    <div className="col-6 col-sm-4" style={{textAlign:'left'}}>
-                        <input type="text" onChange={this.typeChange} value={this.state.query} placeholder="Optional"/>                  
-                    </div><br/><br/>
-                </div><br/>
+                    <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
+                        <input type="text" onChange={this.typeChange} value={this.state.query} placeholder="Optional" />
+                    </div><br /><br />
+                </div><br />
                 <div className="row">
                     <div className="col-4">
                         <button onClick={this.onSubmit}>
@@ -134,7 +136,7 @@ class News extends Component {
                         </button>
                     </div>
                 </div>
-                <br/>
+                <br />
                 <div className="row">
                     <div className="col-12 col-md-9">
                         <ul className="list-unstyled">
@@ -142,8 +144,8 @@ class News extends Component {
                         </ul>
                     </div>
                 </div>
-                <span><em>This page is powered by News API</em></span>   
-        </div>
+                <span><em>This page is powered by News API</em></span>
+            </div>
         );
     }
 }

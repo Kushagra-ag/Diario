@@ -30,7 +30,7 @@
 .header_sec {
   text-align: left;
   padding: .3rem 1rem;
-  box-shadow: 0 5px 9px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 5px 9px 0 rgba(0,0,0,0.8);
   color: #fff;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .notes input::placeholder {
-  color: brown;
+  color: #a1887f;
   opacity: 0.6;
 }
 
