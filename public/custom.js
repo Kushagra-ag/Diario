@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
         $('#sidebar li').on('click', function () {
-            $('.content').toggleClass('sidemenu');
+            $('.content').toggleClass('sidemenu maxheight');
 
             if (count) {
                 $('.sidebar-header').toggleClass('class0');
