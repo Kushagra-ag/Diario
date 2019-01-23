@@ -20,10 +20,10 @@ class Home extends Component {
                 
                 <h1>Welcome</h1><br/>
                 <h4>This is the Homepage</h4><br/>
-                <button onClick = {this.props.dataHome.method_1}>Increment</button>
-                <button onClick = {this.props.dataHome.method_2}>Decrement</button>
-                <p>{this.state.m1}<br/>{this.props.dataHome.count}</p><br/><br/>
-                <Main prop1 = {this.props.dataHome.input_click} prop2={this.props.dataHome.arr}/>
+                {/*<button onClick = {this.props.dataHome.method_1}>Increment</button>
+                                 <button onClick = {this.props.dataHome.method_2}>Decrement</button>
+                                 <p>{this.state.m1}<br/>{this.props.dataHome.count}</p><br/><br/>
+                                 <Main prop1 = {this.props.dataHome.input_click} prop2={this.props.dataHome.arr}/>*/}
             </div>
         );
     }

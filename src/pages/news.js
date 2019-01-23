@@ -85,7 +85,7 @@ class News extends Component {
                             <h4>{article.title}</h4>
                             <p>Published on <strong>{this.date(article.publishedAt)}</strong></p>
                             <p>{article.content}</p>
-                            <span>Read full article <a href={article.url}>here</a></span>
+                            <span>Read full article <b><a href={article.url}>here</a></b></span>
                             <p><strong>Source</strong> - {article.author}, {article.source.name}</p>
 
                         </li>
@@ -107,7 +107,7 @@ class News extends Component {
                 <h2>Latest news</h2><br />
                 <div className="row" style={style3}>
                     <div className="col-6 col-sm-4">
-                        Category
+                        <b>Category</b>
                     </div>
                     <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
                         <select onChange={this.categoryChange} defautvalue="business">
@@ -123,7 +123,7 @@ class News extends Component {
                 </div>
                 <div className="row" style={style3}>
                     <div className="col-6 col-sm-4">
-                        Search
+                        <b>Search</b>
                     </div>
                     <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
                         <input type="text" onChange={this.typeChange} value={this.state.query} placeholder="Optional" />
@@ -132,7 +132,7 @@ class News extends Component {
                 <div className="row">
                     <div className="col-4">
                         <button onClick={this.onSubmit}>
-                            Enlighten me!
+                            <b>Enlighten me!</b>
                         </button>
                     </div>
                 </div>
