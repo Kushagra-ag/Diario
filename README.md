@@ -1,4 +1,4 @@
-###Diario
+#Diario
 
 This project uses [Create React App](https://github.com/facebook/create-react-app).
 
