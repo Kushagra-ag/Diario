@@ -11,6 +11,7 @@ import About from './about';
 import News from './news';
 import Clock from './world_clock';
 import Calender from './calendar';
+import Video from './video';
 // import Footer from './components/footer.js';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
@@ -59,6 +60,7 @@ class App extends Component {
                 <Route path='/news' component={News} />
                 <Route path='/world_clock' component={Clock} />
                 <Route path='/calender' component={Calender} />
+                <Route path='/video' component={Video} />
               </Switch>
               
             </div>

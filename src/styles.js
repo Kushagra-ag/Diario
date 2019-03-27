@@ -1,4 +1,3 @@
-import part1 from './images/backgrounds/sidemenu/part1.png';
 
 export const style1 = {
     background: 'rgba(62,39,35,0.8)',

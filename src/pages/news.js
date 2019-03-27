@@ -57,7 +57,7 @@ class News extends Component {
 
         if (this.state.query === "") {
 
-            url = `${BASEURL}top-headlines?country=${this.state.country}&category=${this.state.category}&pageSize=10`; 
+            url = `${BASEURL}top-headlines?country=${this.state.country}&category=${this.state.category}&pageSize=10`;
         }
 
         else {
@@ -132,7 +132,7 @@ class News extends Component {
                 <div className="row">
                     <div className="col-4">
                         <button onClick={this.onSubmit}>
-                            <b>Enlighten me!</b>
+                            Enlighten me!
                         </button>
                     </div>
                 </div>
