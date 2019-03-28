@@ -28,9 +28,10 @@ class Video extends Component {
             return
         }
 
+        const txt = <em>Loading your content...</em>
         this.setState({
             ...this.state,
-            videos: "Loading your content"
+            videos: txt
         });
 
         let url = `${BASEURL}?q=${this.state.query}&part=snippet&key=${KEY}&maxResults=2&type=video&videoEmbeddable=true`;
@@ -73,7 +74,7 @@ class Video extends Component {
 
         return(
             <div className="videos">
-                <h3>Youtube Video search</h3>
+                <h3 style={{marginBottom:'40px'}}>Youtube Video search</h3>
                 <div className="row">
                     <div className="col-12">
                         <input onChange={this.onChange} value={this.state.query} />

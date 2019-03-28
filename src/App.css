@@ -28,10 +28,6 @@
   padding-bottom: 50%;
 }
 
-/*.container-fluid > div {
-	background-color: rgba(62,39,35,0.3)
-}*/
-
 .header_sec {
   text-align: left;
   padding: .3rem 1rem;
@@ -62,18 +58,6 @@
   z-index: 5;
   overflow: hidden;
 }
-
-/* .content:before {
-  content: "";
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background: #a1887f url('./images/backgrounds/content-bg.jpg') 0 0 no-repeat fixed;
-  z-index: -10;
-} */
 
 .sidemenu {
   /*display: block;*/
@@ -181,6 +165,28 @@
   width: 40px;
 }
 
+button {
+  border: none;
+  border-radius: 8px;
+  color: #3e2723;
+  padding: 2px 8px;
+  background-color: rgba(62,39,35,0.31);
+}
+
+input {
+  background-color: rgba(62,39,35,0.31);
+  color: #3e2723;
+  padding: 1px;
+  max-width: initial;
+  max-width: -webkit-fill-available;
+  border: none;
+  border-radius: 5px;
+}
+
+button:focus, input:focus, select:focus, option:focus, button:active, input:active {
+  outline: none;
+}
+
 /* news section styling */
 .news ul {
   max-width: 100%;
@@ -197,24 +203,6 @@
   border-radius: 5px;
 }
 
-.news input {
-  background-color: rgba(62,39,35,0.31);
-  color: #3e2723;
-  padding: 1px;
-  max-width: initial;
-  max-width: -webkit-fill-available;
-  border: none;
-  border-radius: 5px;
-}
-
-.news button {
-  border: none;
-  border-radius: 8px;
-  color: #3e2723;
-  padding: 2px 8px;
-  background-color: rgba(62,39,35,0.31);
-}
-
 .news li {
   margin: 5px 0;
   padding: 5px 10px 20px;
@@ -229,9 +217,6 @@
   transform: scale(0.9);
 }
 
-.news button:focus, .news input:focus, .news select:focus,.news option:focus, .news button:active, .new input:active {
-  outline: none;
-}
 /* -------------- */
 
 /* clock section styling */
@@ -286,7 +271,6 @@
   font-size: 4em;
   min-width: 90vw;
   padding: 1px 15px;
-  color: #a1887f;
   background: transparent;
 }
 
@@ -352,6 +336,17 @@
 } */
 /* ---------------*/
 
+/* Video section styling */
+.videos button {
+  margin: 5px;
+}
+
+.videos input {
+  margin: 5px;
+}
+
+/* ------------- */
+
 .footer {
   position: fixed;
   max-width: 100%;
@@ -369,11 +364,6 @@
   height: 40px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -387,15 +377,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @media screen and (min-width: 850px) {

@@ -17,3 +17,8 @@ export const style3 = {
 export const style4 = {
     display: 'inline-block'
 }
+
+export const style5 = {
+    paddingTop: '10px',
+    paddingBottom: '10px'
+}
