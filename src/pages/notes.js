@@ -81,13 +81,13 @@ class CreateNew extends Component {
                 title = "untitled";
             this.props.data.addNote(title, content);
             console.log("Data saved");
-            console.log(my_store.getState());
+            //console.log(my_store.getState());
         }
 
     }
 
     delete() {
-        console.log(my_store.getState());
+        //console.log(my_store.getState());
         this.props.data.delNote(this.state.id);
         console.log(my_store.getState());
     }
@@ -114,7 +114,7 @@ class Grid extends Component {
 
         };
         this.show = this.show.bind(this);
-        this.blank = this.blank.bind(this);
+        this.create = this.create.bind(this);
 
     }
 
@@ -131,15 +131,15 @@ class Grid extends Component {
         });
     }
 
-    blank(e) {
-        this.props.local.callback("", "");
+    create(e) {
+        this.props.local.callback("", "", "");
     }
 
     render() {
         return (
             <>
                 <h1> My Notes </h1>
-                <Link to='/notes/new' onClick={this.blank}><img className="n" src={plus} alt="Create new" /></Link>
+                <Link to='/notes/new' onClick={this.create}><img className="n" src={plus} alt="Create new" /></Link>
 
                 <ul style={{ textAlign: "center" }}>
                     {

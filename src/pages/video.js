@@ -10,7 +10,8 @@ class Video extends Component {
 
         this.state = {
             query: "",
-            error: ""
+            error: "",
+            videos: ""
         }
 
         this.onSubmit = this.onSubmit.bind(this);
@@ -27,7 +28,7 @@ class Video extends Component {
         }
 
         let url = `${BASEURL}?q=${this.state.query}&part=snippet&key=${KEY}&maxResults=2&type=video&videoEmbeddable=true`;
-
+        
         fetch(url)
 		.then(results => results.json())
 		.then(data => {
@@ -35,10 +36,22 @@ class Video extends Component {
 			console.log(data);
 			//console.log(url);
 
-			let videoid = data.items.map(video => video.id.videoId);
-			console.log(videoid);
+			let videos = data.items.map(video => {
 
-			returnFrames(videoid);
+                return(
+                    `<iframe width="560" height="315" 
+		src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" 
+		allow="accelerometer; autoplay; encrypted-media; 
+		gyroscope; picture-in-picture" allowfullscreen>
+		</iframe>`
+                );
+            });
+			
+
+			this.setState({
+                ...this.state,
+                videos: videos
+            })
 		})
     }
 
@@ -53,7 +66,10 @@ class Video extends Component {
 
 
         return(
-
+            <div>
+                <h3>Youtube Video search</h3>
+                <input onChange={this.onChange} value={this.state.query} />
+            </div>
         );
     }
 }
