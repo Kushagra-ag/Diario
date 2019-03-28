@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Welcome from './components/welcome_img.js';
-import Main from './components/main.js';
+//import Welcome from './components/welcome_img.js';
+//import Main from './components/main.js';
 import clock from '../images/worldclock/world_clock.png'
 import calendar from '../images/calendar.png'
 import { Link } from 'react-router-dom';

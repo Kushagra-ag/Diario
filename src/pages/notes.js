@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Switch, Route, Link } from 'react-router-dom';
 import plus from '../images/notes/images.png';
 import { my_store } from '../store';

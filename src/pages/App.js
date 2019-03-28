@@ -33,14 +33,14 @@ class App extends Component {
       method_1: this.props.method_1,
       method_2: this.props.method_2,
       input_click: this.props.input_click,
-      count: this.props.message.count,
-      arr: this.props.message.arr
+      count: this.props.centralState.count,
+      arr: this.props.centralState.arr
     };
 
     const notesProps = {
       delNote: this.props.delNote,
       addNote: this.props.note,
-      state: this.props.message
+      state: this.props.centralState
     };
 
     return (
@@ -74,7 +74,7 @@ class App extends Component {
 //React - Redux code
 const mapStateToProps = (state) => {
   return {
-    message: state
+    centralState: state
   };
 }
 

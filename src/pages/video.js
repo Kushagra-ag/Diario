@@ -23,13 +23,21 @@ class Video extends Component {
         if(this.state.query === "") {
             this.setState({
                 ...this.state,
-                error: "Input field is empty"
+                videos: "Input field is empty"
             });
+            return
         }
+
+        this.setState({
+            ...this.state,
+            videos: "Loading your content"
+        });
 
         let url = `${BASEURL}?q=${this.state.query}&part=snippet&key=${KEY}&maxResults=2&type=video&videoEmbeddable=true`;
         
-        fetch(url)
+        fetch(url, {
+            method: "GET"
+        })
 		.then(results => results.json())
 		.then(data => {
 
@@ -39,11 +47,9 @@ class Video extends Component {
 			let videos = data.items.map((video,idx) => {
 
                 return(
-                    <li key={idx}><iframe title={idx} width="560" height="315" 
-		src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" 
-		allow="accelerometer; autoplay; encrypted-media; 
-		gyroscope; picture-in-picture" allowFullScreen>
-		</iframe></li>
+                    <li key={idx}>
+                    <iframe title={idx} src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+		            </iframe></li>
                 );
             });
 			
@@ -51,7 +57,7 @@ class Video extends Component {
 			this.setState({
                 ...this.state,
                 videos: videos
-            })
+            });
 		})
     }
 
@@ -66,12 +72,16 @@ class Video extends Component {
 
 
         return(
-            <div>
+            <div className="videos">
                 <h3>Youtube Video search</h3>
-                <input onChange={this.onChange} value={this.state.query} />
-                <button onClick={this.onSubmit}>Search</button>
+                <div className="row">
+                    <div className="col-12">
+                        <input onChange={this.onChange} value={this.state.query} />
+                        <button onClick={this.onSubmit}>Search</button>
+                    </div>
+                </div>
                 <div>
-                    <ul>
+                    <ul className="list-unstyled">
                         {this.state.videos}
                     </ul>
                 </div>

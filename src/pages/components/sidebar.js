@@ -1,5 +1,4 @@
 import React from 'react';
-import { style1 } from '../../styles.js';
 import { Link } from 'react-router-dom';
 
 const Sidebar = (props) => {

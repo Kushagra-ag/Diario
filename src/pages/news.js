@@ -86,7 +86,7 @@ class News extends Component {
                             <p>Published on <strong>{this.date(article.publishedAt)}</strong></p>
                             <p>{article.content}</p>
                             <span>Read full article <b><a href={article.url}>here</a></b></span>
-                            <p><strong>Source</strong> - {article.author}, {article.source.name}</p>
+                            <p><strong>Source</strong> - {article.source.name}</p>
 
                         </li>
                     );
@@ -106,10 +106,10 @@ class News extends Component {
             <div className="news">
                 <h2>Latest news</h2><br />
                 <div className="row" style={style3}>
-                    <div className="col-6 col-sm-4">
+                    <div className="col-6">
                         <b>Category</b>
                     </div>
-                    <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
+                    <div className="col-6" style={{ textAlign: 'left' }}>
                         <select onChange={this.categoryChange} defautvalue="business">
                             <option value="business">Business</option>
                             <option value="entertainment">Entertainment</option>
@@ -122,10 +122,10 @@ class News extends Component {
                     </div>
                 </div>
                 <div className="row" style={style3}>
-                    <div className="col-6 col-sm-4">
+                    <div className="col-6">
                         <b>Search</b>
                     </div>
-                    <div className="col-6 col-sm-4" style={{ textAlign: 'left' }}>
+                    <div className="col-6" style={{ textAlign: 'left' }}>
                         <input type="text" onChange={this.typeChange} value={this.state.query} placeholder="Optional" />
                     </div><br /><br />
                 </div><br />
