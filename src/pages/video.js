@@ -57,7 +57,7 @@ class Video extends Component {
                             <br/>
                             <iframe title={idx} src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                             </iframe>
-                            <div>{video.snippet.description}</div>
+                            <div className="desc">{video.snippet.description}</div>
                         </div>
                     </div>
                     
@@ -85,7 +85,7 @@ class Video extends Component {
 
         return(
             <div className="videos">
-                <h3 style={{marginBottom:'40px'}}>Youtube Video search</h3>
+                <h3 style={{marginBottom:'40px'}}>Youtube video search</h3>
                 <div className="row">
                     <div className="col-12">
                         <input onChange={this.onChange} value={this.state.query} />

@@ -178,7 +178,7 @@ button {
 input {
   background-color: rgba(62,39,35,0.31);
   color: #3e2723;
-  padding: 1px;
+  padding: 2px 8px;
   max-width: initial;
   max-width: -webkit-fill-available;
   border: none;
@@ -368,7 +368,11 @@ button:active {
 .videos iframe {
   border: 4px solid #3e2723;
   border-radius: 8px;
-  
+}
+
+.videos .desc {
+  height: 140px;
+  overflow-y: hidden;
 }
 /* ------------- */
 
