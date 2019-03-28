@@ -159,6 +159,7 @@
   background-color: #088;
   min-height: 50px;
 }
+/* Global styles */
 
 .extraIcons img {
   height: 40px;
@@ -171,6 +172,7 @@ button {
   color: #3e2723;
   padding: 2px 8px;
   background-color: rgba(62,39,35,0.31);
+  cursor: pointer;
 }
 
 input {
@@ -187,6 +189,13 @@ button:focus, input:focus, select:focus, option:focus, button:active, input:acti
   outline: none;
 }
 
+button:active {
+  color: #fff;
+  transform: scale(0.9);
+}
+
+/* ------------*/
+
 /* news section styling */
 .news ul {
   max-width: 100%;
@@ -201,6 +210,7 @@ button:focus, input:focus, select:focus, option:focus, button:active, input:acti
   padding: 3px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .news li {
@@ -210,11 +220,6 @@ button:focus, input:focus, select:focus, option:focus, button:active, input:acti
 
 .news li a {
 	color: #1d0e0b;
-}
-
-.news button:active {
-  color: #fff;
-  transform: scale(0.9);
 }
 
 /* -------------- */

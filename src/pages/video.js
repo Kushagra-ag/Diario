@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { style5 } from '../styles';
 
 const KEY = "AIzaSyAdwEtSRKZTBk3-W3ygZvVcawIebzDXzh8";
 const BASEURL = "https://www.googleapis.com/youtube/v3/search";
@@ -48,7 +49,7 @@ class Video extends Component {
 			let videos = data.items.map((video,idx) => {
 
                 return(
-                    <li key={idx}>
+                    <li key={idx} style={style5}>
                     <iframe title={idx} src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
 		            </iframe></li>
                 );
@@ -81,6 +82,7 @@ class Video extends Component {
                         <button onClick={this.onSubmit}>Search</button>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <ul className="list-unstyled">
                         {this.state.videos}

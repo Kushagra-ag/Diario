@@ -19,6 +19,6 @@ export const style4 = {
 }
 
 export const style5 = {
-    paddingTop: '10px',
-    paddingBottom: '10px'
+    margin: '5px 0',
+  padding: '5px 10px 20px'
 }

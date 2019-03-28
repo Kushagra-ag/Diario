@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { style3 } from '../styles';
+import { style3, style5 } from '../styles';
 
 const BASEURL = "https://newsapi.org/v2/";
 const KEY = "e01f5efb3cba4f2ba1beeced89c7799e";
@@ -81,7 +81,7 @@ class News extends Component {
                 //console.log("ok");
                 let items = data.articles.map((article, idx) => {
                     return (
-                        <li key={idx}>
+                        <li key={idx} style={style5}>
                             <h4>{article.title}</h4>
                             <p>Published on <strong>{this.date(article.publishedAt)}</strong></p>
                             <p>{article.content}</p>
