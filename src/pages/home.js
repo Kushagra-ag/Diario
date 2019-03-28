@@ -24,15 +24,20 @@ class Home extends Component {
                 <h1>Welcome</h1><br/>
                 <h4>This is the Homepage</h4><br/><br/><br/>
                 <div className="row extraIcons">
-                    <div className="col-6 col-md-4">
+                    <div className="col-4 col-md-4">
                         <Link to='/world_clock'><img src={clock} alt="world clock"></img></Link>
                         <br/>
                         World Clock
                     </div>
-                    <div className="col-6 col-md-4">
+                    <div className="col-4 col-md-4">
                         <Link to='/calender'><img src={calendar} alt="calendar"></img></Link>
                         <br/>
                         Calender
+                    </div>
+                    <div className="col-4 col-md-4">
+                        <Link to='/video'><img src={calendar} alt="calendar"></img></Link>
+                        <br/>
+                        Videos
                     </div>
                 {/*<button onClick = {this.props.dataHome.method_1}>Increment</button>
                                  <button onClick = {this.props.dataHome.method_2}>Decrement</button>

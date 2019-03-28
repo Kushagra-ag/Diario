@@ -33,17 +33,17 @@ class Video extends Component {
 		.then(results => results.json())
 		.then(data => {
 
-			console.log(data);
-			//console.log(url);
+			
+			console.log(url);
 
-			let videos = data.items.map(video => {
+			let videos = data.items.map((video,idx) => {
 
                 return(
-                    `<iframe width="560" height="315" 
-		src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" 
+                    <li key={idx}><iframe title={idx} width="560" height="315" 
+		src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" 
 		allow="accelerometer; autoplay; encrypted-media; 
-		gyroscope; picture-in-picture" allowfullscreen>
-		</iframe>`
+		gyroscope; picture-in-picture" allowFullScreen>
+		</iframe></li>
                 );
             });
 			
@@ -69,6 +69,12 @@ class Video extends Component {
             <div>
                 <h3>Youtube Video search</h3>
                 <input onChange={this.onChange} value={this.state.query} />
+                <button onClick={this.onSubmit}>Search</button>
+                <div>
+                    <ul>
+                        {this.state.videos}
+                    </ul>
+                </div>
             </div>
         );
     }
