@@ -144,9 +144,14 @@ class Grid extends Component {
                     {
                         this.props.data.notes.map((val, idx) => {
                             return (
-                                <Link to="./notes/new" key={idx} >
-                                    <li id={val.id} onClick={this.show} >{val.title}</li>
-                                </Link>
+                                    <Link to="./notes/new" key={idx} >
+                                        <li id={val.id} onClick={this.show} >{val.title}
+                                            <div className="row">
+                                                <div className="col-12">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </Link>
                             );
                         })
                     }

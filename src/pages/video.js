@@ -35,7 +35,7 @@ class Video extends Component {
             videos: txt
         });
 
-        let url = `${BASEURL}?q=${this.state.query}&part=snippet&key=${KEY}&maxResults=2&type=video&videoEmbeddable=true`;
+        let url = `${BASEURL}?q=${this.state.query}&part=snippet&key=${KEY}&maxResults=4&type=video&videoEmbeddable=true`;
         
         fetch(url, {
             method: "GET"
@@ -44,14 +44,24 @@ class Video extends Component {
 		.then(data => {
 
 			
-			console.log(url);
+            console.log(url);
+            console.log(data);
 
 			let videos = data.items.map((video,idx) => {
 
                 return(
                     <li key={idx} style={style5}>
-                    <iframe title={idx} src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
-		            </iframe></li>
+                    <div className="row">
+                        <div className="col-12">
+                            <h4>{video.snippet.channelTitle}</h4>
+                            <br/>
+                            <iframe title={idx} src={`https://www.youtube.com/embed/${video.id.videoId}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                            </iframe>
+                            <div>{video.snippet.description}</div>
+                        </div>
+                    </div>
+                    
+		            </li>
                 );
             });
 			
